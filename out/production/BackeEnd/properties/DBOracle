@@ -1,0 +1,6 @@
+host 127.0.0.1
+port 1251
+service orclpdb1
+user backenddevelop
+password t0ps3cr3t
+
