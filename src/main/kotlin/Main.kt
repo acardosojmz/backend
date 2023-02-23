@@ -4,7 +4,7 @@ import factorymethod.OracleDBAdapter
 import properties.PropertiesUtil
 import java.util.*
 
-fun main() {
+suspend fun main() {
 
     val property: Properties? = PropertiesUtil
         .loadProperty("properties/DBMySQL")

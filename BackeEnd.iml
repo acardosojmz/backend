@@ -14,5 +14,6 @@
     <orderEntry type="library" name="mysql-connector-j-8.0.32" level="project" />
     <orderEntry type="library" name="ojdbc8-12.2.0.1" level="project" />
     <orderEntry type="library" name="kotlin-reflect-1.8.10" level="project" />
+    <orderEntry type="library" name="jetbrains.kotlinx.coroutines.core" level="project" />
   </component>
 </module>
