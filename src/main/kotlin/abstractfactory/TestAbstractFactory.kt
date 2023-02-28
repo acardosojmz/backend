@@ -2,7 +2,7 @@ package abstractfactory
 
 
 
-fun main(){
+fun main() {
     val factory: IServiceStackAbstractFactory? = ServiceStackAbstractFactory.createServiceFactory()
     val employeeService = factory?.getEmployeeService()
     val productService = factory?.getProductsService()
