@@ -13,7 +13,7 @@ fun main (){
 
     singletonA?.setAppName("Singleton Pattern")
 
-    singletonB?.setAppVersion("1.0x")
+    singletonB?.setAppVersion("1.0")
 
     println("SingletonA ==> $singletonA")
 
