@@ -2,7 +2,10 @@ package objectpool
 
 
 fun main() {
-    val pool = ExecutorThreadPool(2, 6, 1000 * 100, ExecutorTaskFactory() as IPoolableObjectFactory<ExecutorTask>)
+    val pool = ExecutorThreadPool(minInstances = 2, maxInstances = 6,
+        waitTime = 1000 * 100,
+        poolableObjectFactory =   ExecutorTaskFactory() as IPoolableObjectFactory<ExecutorTask>)
+
     for (c in 0..9) {
         Thread {
             try {
