@@ -3,7 +3,7 @@ package adapter
 
 fun main() {
 
-    val request = BankCreditRequest("Ambrosio Cardoso", 1000.00)
+    val request = BankCreditRequest("Ambrosio Cardoso", 3000.00)
 
     val xBank: IBankAdapter = XBankCreditAdaptee()
     val xresponse = xBank.sendCreditRequest(request)
