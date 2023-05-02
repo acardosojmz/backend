@@ -15,6 +15,5 @@ class AESEncryptAlgorithm: IEncryptAlgorithm {
         val c = Cipher.getInstance("AES")
         c.init(Cipher.ENCRYPT_MODE, key)
         return  Base64.getEncoder().encodeToString(c.doFinal(message.toByteArray()))
-
     }
 }

@@ -9,17 +9,15 @@ fun main() {
     val xresponse = xBank.sendCreditRequest(request)
     println(
         """
-            ${"xBank approved > " + xresponse.approved}
-            
-            """.trimIndent()
+        ${"xBank approved > " + xresponse.approved} 
+        """.trimIndent()
     )
     val yBank: IBankAdapter = YBankCreditAdaptee()
     val yresponse = yBank.sendCreditRequest(request)
     println(
         """
-            ${"yBank approved > " + yresponse.approved}
-            
-            """.trimIndent()
+        ${"yBank approved > " + yresponse.approved} 
+        """.trimIndent()
     )
     if (xresponse.approved) {
         println("xBank aprobó su crédito, felicidades!!")
