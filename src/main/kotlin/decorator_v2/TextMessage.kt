@@ -1,4 +1,4 @@
-package decoratorIncomplete
+package decorator_v2
 
 class TextMessage(private var content: String): IMessage {
 

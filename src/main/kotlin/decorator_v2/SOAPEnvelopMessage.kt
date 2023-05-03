@@ -1,4 +1,4 @@
-package decoratorIncomplete
+package decorator_v2
 
 class SOAPEnvelopMessage(private var message: IMessage): MessageDecorator(message) {
     override fun processMessage(): IMessage {

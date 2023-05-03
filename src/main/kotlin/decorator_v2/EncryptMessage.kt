@@ -1,4 +1,4 @@
-package decoratorIncomplete
+package decorator_v2
 
 import java.security.Key
 import java.util.*
@@ -10,9 +10,9 @@ class EncryptMessage (private var user:String,
                       private var password: String,
                       private var message: IMessage): MessageDecorator(message) {
     override fun processMessage(): IMessage {
-        this.message= message.processMessage()
+        message= message.processMessage()
         encryptMessage()
-        return this.message
+        return message
     }
     private fun encryptMessage(): IMessage? {
         return try {
