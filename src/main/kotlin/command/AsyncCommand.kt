@@ -13,7 +13,7 @@ abstract class AsyncCommand: BaseCommand() {
 
             }
 
-        }).start();
+        }).start()
 
     }
 
