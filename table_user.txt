@@ -1,0 +1,10 @@
+CREATE TABLE user (
+userName varchar(45) NOT NULL,
+password varchar(45) NOT NULL,
+rol varchar(45) NOT NULL,
+PRIMARY KEY (userName)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+insert into user(userName,password,rol) values('Ambrosio','123456','Admin');
+insert into user(userName,password,rol) values('Cardoso','123456','Docente');
+insert into user(userName,password,rol) values('Jimenez','123456','Estudiante');

@@ -14,7 +14,7 @@ class DirCommand: BaseCommand() {
     }
 
     override fun execute(args: Array<String>, out: OutputStream) {
-        if (args == null || args.size < 2) {
+        if (args.size < 2) {
             write(out, "$COMMANDNAME insufficient arguments ")
         }
         val operation = args[0]

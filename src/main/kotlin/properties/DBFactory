@@ -1,1 +1,1 @@
-defaultDBClass factorymethod.OracleDBAdapter
+defaultDBClass factorymethod.MySqlDBAdapter
