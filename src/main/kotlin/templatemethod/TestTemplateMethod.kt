@@ -6,7 +6,7 @@ fun main(){
     val logDir = "/home/ambrosio/templatemethod/logs"
     val processDir = "/home/ambrosio/templatemethod/process"
     val files = arrayOf("/home/ambrosio/templatemethod/abc.drug",
-        "/home/ambrosio/templatemethod/123.grys" )
+        "/home/ambrosio/templatemethod/123.gry" )
     println("> Monitoring start")
 
     val fileDrug = File(files[0])

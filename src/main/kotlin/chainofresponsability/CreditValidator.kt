@@ -7,7 +7,7 @@ class CreditValidator: OrderValidator()  {
         val newBalance = creditData.balance + total
         if(newBalance > creditData.creditLimit) {
             throw ValidationException("El monto de la orden excede el "
-                    + "límite de crédito disponible");
+                    + "límite de crédito disponible")
         }
     }
 

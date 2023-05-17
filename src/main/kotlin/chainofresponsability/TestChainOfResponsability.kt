@@ -6,8 +6,8 @@ import java.util.*
 
 fun main() {
     val telephone = Telephone("951","3618396","")
-    val address = Address("Address 1","Address 2","Mexico","7123")
-    val creditData =  CreditData(20000.0,2000.0)
+    val address = Address("Address 1","Address 2","Mexico","71230")
+    val creditData =  CreditData(20500.0,2000.0)
     val customer: Contributor= Customer("Ambrosio Cardoso","CAJA7412079W5",Status.ACTIVO, address,telephone,creditData)
 
     val orderItems: ArrayList<OrderItem> = ArrayList()
@@ -18,14 +18,14 @@ fun main() {
     }
     val salesOrder = SalesOrder(LocalDate.now(), customer, orderItems)
 
-    println("Total orden > " + salesOrder.getTotal())
+    println("Total > " + salesOrder.getTotal())
 
     try {
         val validator: OrderValidator = OrderValidatorBuilder.buildSalesOrderValidator()
         validator.validate(salesOrder)
-        println("Validación exitosa")
+        println("successfull validation")
     } catch (e: Exception) {
-        System.err.println(e.message)
+        println(e.message)
         e.printStackTrace()
     }
 

@@ -5,9 +5,8 @@ class SalesOrderValidator: OrderValidator()  {
         if (order !is SalesOrder) {
             throw ValidationException("Se esperaba una orden de Venta")
         }
-        for (validator in validators) {
-            validator.validate(order)
-        }
+        validators.forEach { it.validate(order) }
+
     }
 
 }
