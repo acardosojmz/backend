@@ -1,0 +1,13 @@
+<select> ::= <target> <from> <where>
+<target> ::= "select" <literal>?
+<from> ::= "from" <literal>
+<where> ::= "where" <statement>
+<statement> ::= <and> | <or> | <boolExp> 
+<and> ::= <statement> "and" <statement>
+<or> ::= <statement> "or" <statement>
+<boolExp> ::= <literal> <mathOp> <literal>
+<literal> ::= <date> | <numeric> | <text>
+<date> ::= //Date Formate regex
+<numeric> ::= //Numeric Formate regex
+<text> ::= .? //Any entry
+<mathOp> ::= "=" | "!=" | "<> | "<" | "<=" | ">" | ">="

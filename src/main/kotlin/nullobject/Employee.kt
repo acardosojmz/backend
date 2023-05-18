@@ -1,6 +1,7 @@
 package nullobject
 
 class Employee {
+
     companion object {
         val NULL_EMPLOYEE = Employee(0, "UNKNOWN EMPLOYEE", Address.NULL_ADDRESS)
     }

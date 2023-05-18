@@ -1,8 +1,10 @@
 package interpreter
 
-import org.apache.poi.hssf.usermodel.HSSFSheet
-import org.apache.poi.hssf.usermodel.HSSFWorkbook
 import org.apache.poi.ss.usermodel.Row
+import org.apache.poi.ss.usermodel.Sheet
+import org.apache.poi.ss.usermodel.Workbook
+import org.apache.poi.ss.usermodel.WorkbookFactory
+import java.io.FileInputStream
 import java.io.IOException
 import java.text.SimpleDateFormat
 import java.util.*
@@ -10,8 +12,8 @@ import java.util.*
 
 class Context(private var dbPath: String?) {
     private var dateFormat: SimpleDateFormat? = null
-    private var workboook: HSSFWorkbook? = null
-    private var sheets: HSSFSheet? = null
+    private var workboook: Workbook? = null
+    private var sheets: Sheet? = null
     private var columns: Array<String?>?= null
     private var tableIterator: Iterator<Row>? = null
     private val resultRows: MutableList<Row?> = ArrayList<Row?>()
@@ -52,11 +54,13 @@ class Context(private var dbPath: String?) {
 
     private fun initiateFileRead() {
         try {
-            println("dbPath > $dbPath")
+            val inputStream = FileInputStream(dbPath)
+            workboook= WorkbookFactory.create(inputStream)
+            /*
             workboook = HSSFWorkbook(
                 Context::class.java.classLoader
-                    .getResourceAsStream(dbPath)
-            )
+                    .getResourceAsStream(dbPath) */
+
         } catch (e: IOException) {
             e.printStackTrace()
         }
@@ -107,9 +111,10 @@ class Context(private var dbPath: String?) {
         if (sheets == null) {
             return false
         }
+
         for (row: Row in sheets!!) {
-            val lastRow: Int = row!!.lastCellNum as Int
-            println("lastRow > $lastRow")
+            val lastRow = row!!.lastCellNum.toInt()
+
             columns = arrayOfNulls(lastRow)
             var index = 0
             for (cell in row) {

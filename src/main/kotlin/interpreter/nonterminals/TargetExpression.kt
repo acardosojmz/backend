@@ -4,7 +4,9 @@ import interpreter.Context
 import interpreter.SQLExpression
 import interpreter.terminals.LiteralExpression
 import org.apache.poi.ss.usermodel.Cell
+import org.apache.poi.ss.usermodel.CellType
 import org.apache.poi.ss.usermodel.Row
+import kotlin.reflect.typeOf
 
 
 class TargetExpression(vararg expressions: LiteralExpression): SQLExpression {
@@ -23,8 +25,16 @@ class TargetExpression(vararg expressions: LiteralExpression): SQLExpression {
                     val column = literalExpression.interpret(context).toString()
                     context.tableColumn(column)
                     val columnIndex = context.columnIndex(column)
-                    val cell: Cell = row!!.getCell(columnIndex)
-                    val value = cell.stringCellValue
+                    val cell= row!!.getCell(columnIndex)
+                    var value: Any=""
+                    if (cell.cellType==CellType.STRING ){
+                        value=  cell.stringCellValue
+                    }else if (cell.cellType==CellType.NUMERIC){
+                        value = cell.numericCellValue.toString()
+                    } else if (cell.cellType==CellType.BOOLEAN){
+                        value = cell.booleanCellValue
+                    }
+
                     result!![col] = value
                 }
             }
@@ -34,7 +44,7 @@ class TargetExpression(vararg expressions: LiteralExpression): SQLExpression {
 
     override fun toString(): String {
         var output = ""
-        targets.forEach { output+=it }
-        return output.substring(2)
+        targets.forEach { output+= "$it," }
+        return output.substring(0,output.length-1)
     }
 }

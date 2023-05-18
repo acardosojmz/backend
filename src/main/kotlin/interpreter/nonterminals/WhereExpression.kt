@@ -20,7 +20,7 @@ class WhereExpression(private val statement: StatementExpression?): SQLExpressio
 
     override fun toString(): String {
         if (statement != null) {
-            return "WHERE $statement"
+            return " WHERE $statement "
         } else {
             return "";
         }

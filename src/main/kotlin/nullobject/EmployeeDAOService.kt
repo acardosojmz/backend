@@ -11,5 +11,6 @@ class EmployeeDAOService {
 
     fun findEmployeeById(id: Long): Employee {
         return employees.firstOrNull { it.getId() == id } ?: Employee.NULL_EMPLOYEE
+
     }
 }

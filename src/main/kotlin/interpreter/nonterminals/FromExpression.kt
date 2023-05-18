@@ -20,6 +20,6 @@ class FromExpression(private val table: LiteralExpression): SQLExpression {
     }
 
     override fun toString(): String {
-        return  "FROM ${table.toString()}"
+        return  " FROM ${table.toString()} "
     }
 }

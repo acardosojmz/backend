@@ -30,6 +30,9 @@ class SelectExpression: SQLExpression {
         return context.getResultArray()
     }
 
+    override fun toString(): String {
+        return "SELECT ${target.toString()}   ${from.toString()}  ${where.toString()}"
+    }
 
 
 }
